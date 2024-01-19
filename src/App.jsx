@@ -5,6 +5,9 @@ import TabButton from "./components/TabButton/TabButton";
 import "./components/TabButton/TabButton.css";
 
 function App() {
+  const handleSelect = (selectedIdentifier) => {
+    console.log(selectedIdentifier);
+  };
   return (
     <div>
       <Header />
@@ -24,10 +27,12 @@ function App() {
         </section>
         <section id="examples">
           <menu>
-            <TabButton>Components</TabButton>
-            <TabButton>JSX</TabButton>
-            <TabButton>Props</TabButton>
-            <TabButton>State</TabButton>
+            <TabButton onSelect={() => handleSelect("components")}>
+              Components
+            </TabButton>
+            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
+            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
+            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
           </menu>
         </section>
       </main>
